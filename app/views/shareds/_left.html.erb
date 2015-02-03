@@ -1,0 +1,8 @@
+<div class="nav-bar">
+  <dl> 
+		<dt class="left-nav-header">PRODUCT LIST</dt>
+		<% @product.each do |prod|%>
+			<dd><%=link_to(prod.name,"")%></dd> 
+		<%end%>
+	</dl> 
+</div>

@@ -1,0 +1,25 @@
+<%= form_for(@site_banner,url: admins_site_banners_path, html:{class: "form-inline",:multipart => true}) do |f| %>
+  <% if @site_banner.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h2><%= pluralize(@site_banner.errors.count, "error") %> 当前新增内容没有被保：</h2>
+      <ul>
+      <% @site_banner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group">
+    <div class="input-group">
+       <%=f.file_field(:base_url,:multiple=>true)%>
+    </div>
+  </div>
+  <%= submit_tag "提交", :class => "btn btn-default" %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<p><strong>Note:</strong></p>
+<p>可以同时上传多张图片，网络不好的情况下建议单张上传，每张图片大小不应太大！<br>最大允许上传5MB大小文件，理想文件大小：200kb</p>

@@ -1,0 +1,22 @@
+<form action="<%=path%>" method="post" accept-charset="UTF-8">
+<% if @obj.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h2><%= pluralize(@obj.errors.count, "error") %> 当前新增内容没有被保存：</h2>
+      <ul>
+      <% @obj.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <input name="utf8" type="hidden" value="&#x2713;">
+  <input type='hidden' name='_method' value="<%=form_method action%>" />
+  <%= tag(:input, :type => "hidden", :name =>  request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+  <div class="form-group">
+    <input id="id" type="hidden" value="<%=@obj.id%>" name="id"/>
+    <input class="form-control" name="address[content]" id="address[content]" value="<%=@obj.content%>">
+  </div>
+  <button type="submit" class="btn btn-default">提交</button>
+  <button type="reset" class="btn btn-default">重置</button>
+</form>

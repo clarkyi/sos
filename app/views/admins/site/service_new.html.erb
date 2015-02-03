@@ -1,0 +1,13 @@
+<%unless notice.blank? %>
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <p id="notice"><%= notice %></p>
+  </div>
+<%end%>
+<h1>新增服务</h1>
+
+<%= render 'form',{:action=>"create",:path=>"/admins/site/service_create"} %>
+<%content_for :js do%>
+  <%= javascript_include_tag "admins/ueditor.all.min" %>
+  <%= javascript_include_tag "admins/ueditor.config" %>
+<%end%>

@@ -1,0 +1,15 @@
+#encoding:utf-8
+defaults: &defaults
+  file_path: "/opt/uploads/sos/"
+
+development:
+  <<: *defaults
+  
+test:
+  <<: *defaults 
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults

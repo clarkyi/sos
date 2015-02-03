@@ -1,0 +1,9 @@
+<%unless notice.blank? %>
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <p id="notice"><%= notice %></p>
+  </div>
+<%end%>
+<h1>编辑公司地址</h1>
+
+<%= render 'address_form',{:action=>"update",:path=>"/admins/site/address/address_update"} %>

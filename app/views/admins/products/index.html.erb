@@ -1,0 +1,95 @@
+<br>
+<div class="col-lg-12">
+<form class="form-inline" role="form" action="/admins/products" method="get">
+    <div class="form-group">
+      <label class="sr-only" for="user_id">产品名称</label>
+      <input type="text" class="form-control" name="name" id="name"  value="<%=@name%>" placeholder="产品名字">
+    </div>
+    <button type="submit" class="btn btn-default">查询</button>
+  </form>
+<br>
+<%unless notice.blank? %>
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <p id="notice"><%= notice %></p>
+  </div>
+<%end%>
+</div>
+<div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       产品列表
+    </div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <%if @products.present?%>
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <td>封面</td>
+              <td>产品名字</td>
+              <td>是否显示</td>
+              <td>是否在售</td>
+              <td>显示到首页</td>
+              <td>显示到首页list</td>
+              <td>显示到右侧list</td>
+              <td>操作</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr>
+                <td>
+                  <%=image_tag(product.cover_url,style: "height: 120px; width: 100px; display: block;")%>
+                </td>
+                <td><%=product.name%></td>
+                <td><%= product.is_show == 1 ? "是": "否"%></td>
+                <td><%= product.status == 1 ? "是": "否"%></td>
+                <td>
+                  <a href="javascript:void(0);" data-id="<%=product.id%>" data-is-single="<%=product.is_single%>" class="btn btn-<%=product.is_single==1 ? "danger" : "default" %> single">
+                    <%=product.is_single == 1 ? "隐藏" : "显示"%>
+                  </a>
+                </td>
+                <td>
+                  <a href="javascript:void(0);" data-id="<%=product.id%>"  data-is-recommend="<%=product.is_recommend%>" class="btn btn-<%=product.is_recommend==1 ? "danger" : "default" %> recommend">
+                    <%=product.is_recommend == 1 ? "隐藏" : "显示"%>
+                  </a>
+                </td>
+                <td>
+                  <a href="javascript:void(0);" data-id="<%=product.id%>"  data-is-show-left="<%=product.is_show_left%>" class="btn btn-<%=product.is_show_left==1 ? "danger" : "default" %> show-left ">
+                    <%=product.is_show_left == 1 ? "隐藏" : "显示"%>
+                  </a>
+                </td>
+                <td>
+                  <%= link_to '编辑', edit_admins_product_path(product) %>
+                  <a href="javascript:void(0);" data-id="<%=product.id%>"  data-status="<%=product.status%>" class="btn btn-link status ">
+                    <%= product.status == 0 ? "上架" : "下架" %>
+                  </a>
+                  <%= link_to '删除', "/admins/products/#{product.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%else%>
+          真懒，还没有添加产品呢！赶紧<%= link_to"添加",new_admins_product_path%>吧！
+        <%end%>
+      </div>
+      <%if @products.present?%>
+        <div align="center">
+          <%= paginate @products, :window => 3 %> 
+        </div>
+      <%end%>
+    </div>
+  </div>
+<%= link_to '添加产品', new_admins_product_path,class: "btn btn-default" %>
+</div>
+
+<p><strong>Note:</strong></p>
+<p><span style="color:red">"显示/隐藏到首页"</span>表示该商品会在首页的单个商品区域显示；如果没有商品在首页单个商品区域显示，则改区域会为空</p>
+<p><span style="color:red">"显示/隐藏到首页list"</span>表示该商品会在首页的多个商品区域显示；如果没有商品在首页多个商品区域显示，则改区域会为空</p>
+<p><span style="color:red">"显示/隐藏到左侧list"</span>表示该商品会在首页的多个商品区域显示；如果没有商品在首页多个商品区域显示，则改区域会为空</p>
+
+<%=content_for :js do %>
+<%= javascript_include_tag "admins/products" %>
+<%end%>
