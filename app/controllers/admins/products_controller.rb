@@ -33,9 +33,13 @@ class Admins::ProductsController < Admins::BaseController
   end
 
   def update
-    hash = admins_product_params(params[:product][:cover_url])
-    hash[:cover_url] = upload_cover_img(params[:product][:cover_url],upload_path)
-    @product.update(hash)
+    hash = admins_product_params
+    if params[:product][:cover_url].present?
+      hash[:cover_url] = upload_cover_img(params[:product][:cover_url],upload_path)
+    else
+      hash[:cover_url] = params.permit(:old_cover_url)[:old_cover_url]
+    end
+    @product.update!(hash)
     redirect_to "/admins/products/",:notice=>"编辑成功！"
   end
 

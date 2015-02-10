@@ -1,4 +1,4 @@
-<%= form_for(@product,url: admins_products_path, html:{class: "form-horizontal",:multipart => true}) do |f| %>
+<%= form_for(@product,url: build_admin_product(admins_products_path,method), html:{class: "form-horizontal",:multipart => true}) do |f| %>
   <% if @product.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
@@ -22,6 +22,15 @@
       <%=f.file_field(:cover_url)%>
     </div>
   </div>
+  <%if method == :put%>
+    <input type="hidden" id="old_cover_url" name="old_cover_url" value="<%=@product.cover_url%>">
+    <div class="form-group">
+      <label for="inputCoverUrl" class="col-sm-2 control-label">当前封面</label>
+      <div class="col-sm-10"> 
+        <%=image_tag(@product.cover_url,style: "height: 120px; width:300px; display:block")%>    
+      </div>
+    </div>
+  <%end %>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">是否显示</label>
     <div class="col-sm-10">

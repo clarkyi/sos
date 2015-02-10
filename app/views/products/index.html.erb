@@ -1,0 +1,18 @@
+<%=content_for :title do %>
+  <title>PRODUCT List</title>
+<%end%>
+<%=render "shareds/left"%>
+<div class="product-list clearfix">
+  <%@products.each do |product|%>
+    <div class="product-main">
+	    <div class="thumbnail">
+	        <%=image_tag(product.cover_url)%>
+	    </div>
+      <div class="caption">
+        <div class="text">
+          <p><%=product.description%></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>

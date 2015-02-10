@@ -1,0 +1,15 @@
+<%=content_for :title do %>
+  <title><%=@product.name%>--PRODUCT</title>
+<%end%>
+<%=render "shareds/left"%>
+<div class="product-info">
+  <div class="image">
+    <img src="<%=@product.cover_url%>" width=
+    "360" height="220">
+  </div>
+  <div class="caption">
+    <div class="text">
+      <p><%=@product.description%></p>
+    </div>
+  </div>
+</div>

@@ -24,14 +24,13 @@ a:hover { color: #c00; outline: none; -webkit-transition: color 0.15s ease-in; -
 
 address { font-style: normal; }
 
-.main{
-	width: 100%;
-}
-.product{
+div.body{
+	background-color: #fff;
 	width: 970px;
 	margin: 20px auto 20px;
-	width: 970px;
-
+	clear:both;
+	min-height:200px;
+	zoom:1;
 }
 .product {
 	width: 970px;
@@ -39,20 +38,21 @@ address { font-style: normal; }
 	zoom:1;
 }
 .product-main {
+	margin-top: 20px;
+	float: left;
 	.thumbnail{
 		padding:0;
 		float: left;
 		width:300px;display: inline-block;
 		height: 178px;
-		img{width: 300px; height: 180px;}
+		img{width: 255px; height: 180px;}
 	}
 	.caption{
 		width: 642px;
 		height: 180px;
 		display: inline-block;
 		margin-right: 0;
-		margin-left: 26px;
-		background-color: #fff;
+		padding-left: 26px;
 		border-color: #ddd;
 		border-width: 1px;
 		border-radius: 4px 4px 0 0;
@@ -60,8 +60,6 @@ address { font-style: normal; }
 		box-shadow: none;
 		.text{
 			position: relative;
-			/*padding: 45px 15px 15px;
-			margin-left:15px;*/
 			display: inline-block;
 			p{padding: 5px;}
 		}
@@ -69,38 +67,101 @@ address { font-style: normal; }
 			width: 626px;
 			padding: 5px;
 			display: inline-block;
-			/*border-bottom: 2px solid #99FFFF;*/
+			a {color: blue;}
 		}
 	}
 }
 
-
-.product-list{
+.product-recommend{
 	margin-right: -20px;
-	margin-left: -15px;
-	float: left;
-	background-color: #fff;
+	margin-left: -20px;
+	a{color:#333;}
+	/*float: left;*/
 	.item{
 		display: inline-block;
 		width: 300px;
 		float: left;
-		/*position: relative;*/
+		position: relative;
 		min-height: 1px;
-		padding-right: 20px;
-		padding-left: 15px;
+		padding-right: 18px;
+		padding-left: 18px;
 		
 	}
 }
 .thumbnail {
 			display: block;
-			padding: 4px;
+			/*padding: 4px;*/
 			margin-bottom: 20px;
 			line-height: 1.42857143;
-			background-color: #fff;
-			border: 1px solid #ddd;
+			border: 0px solid #ddd;
 			border-radius: 4px;
 		}
+.col-md-3{
+  width: 200px;
+  margin-top:5px;
 
+  float: left;
+  display: inline-block;  
+  min-height: 1px;
+  /*margin-top: 20px;*/
+
+	.nav-bar{
+		width: 100%; 
+		display: inline-block;
+    text-align: center;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		padding-right: 20px;
+		overflow: visible;
+		position: relative;
+    a{color: blue;}
+	}
+}
+.nav-bar{
+  margin-left: 10px;
+  border-radius: 6px;
+  dl{
+    border: 1px solid #39c;
+    border-radius: 6px;
+    dd{
+      text-align: left;
+    }
+  }
+  .left-nav-header{
+    background-color: #3399CC;
+    height: 30px;
+    line-height: 30px;
+  }  
+}
+
+
+.product-list{
+	width: 766px;
+  /*float: left;*/
+	display: inline-block;
+	.product-main {
+			margin-top: 20px;
+			float: left;
+		.caption{
+			width: 430px;
+			height: 180px;
+      margin-top: -22px;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			
+		}
+	}
+}
+.product-info{
+  width: 766px;
+  /*float: left;*/
+  display: inline-block;
+  margin-top: 20px;
+}
+.image{
+  margin-left: 183px;
+}
 
 .wrapper { margin: 0 auto; width: 970px; }
 
@@ -190,13 +251,13 @@ address { font-style: normal; }
 
 .footer-container .link li.active a:link, .footer-container .link li.active a:visited { color: #000; }
 
-.footer-container .group-logo { background: url(../img/bg-logo-group.png) no-repeat left top; float: right; height: 62px; margin-top: -36px; padding: 20px 60px; text-align: center; width: 250px; }
+.footer-container .group-logo {float: right; height: 62px; margin-top: -36px; padding: 20px 60px; text-align: center; width: 250px; }
 
 .footer-container .group-logo ul { list-style: none; margin: 0; padding: 0; }
 
 .footer-container .group-logo ul li { display: inline; padding: 0 5px; }
 
-.footer-container .verz { background: url(../img/verz-logo.png) no-repeat right top; padding-right: 37px; }
+.footer-container .verz { padding-right: 37px; }
 
 
 
@@ -213,16 +274,16 @@ address { font-style: normal; }
 #menu li.last { border-right: none; padding-right: 0; }
 
 
+/*
+// banner 
 
-/* banner */
+.banner-wrapper {border-bottom: #e1e1e1 solid 1px; padding: 20px 0 15px; }
 
-.banner-wrapper { background: #f3f3f3 url(../img/bg-banner-loop.png) repeat-x left top; border-bottom: #e1e1e1 solid 1px; padding: 20px 0 15px; }
-
-.banner-shaddow { background: url(../img/bg-banner-shadow.jpg) no-repeat center bottom; margin-bottom: -30px; padding-bottom: 50px; }
+.banner-shaddow {margin-bottom: -30px; padding-bottom: 50px; }
 
 .banner-hiden { height: 330px; overflow: hidden; }
 
-.banner { height: 320px; border: #fff solid 1px; margin: 0 auto;  width: 970px; }
+.banner { height: 320px; border: #fff solid 0px; margin: 0 auto;  width: 970px; }
 
 #slider { height: 100%; width: 100%; }
 
@@ -230,7 +291,7 @@ address { font-style: normal; }
 
 .rsABlock {  position: relative; display: block; left: auto; top: auto; }
 
-.rsContent .content-wrapper { background: url(../img/bg-content-bn.png) no-repeat right bottom; padding-bottom: 22px; position: absolute; right: -18px; top: 75px; width: 372px; }
+.rsContent .content-wrapper { padding-bottom: 22px; position: absolute; right: -18px; top: 75px; width: 372px; }
 
 .rsContent .content { background: #d70000; height: 100px; overflow: hidden; padding: 25px 30px; }
 
@@ -238,22 +299,12 @@ address { font-style: normal; }
 
 .blockHeadline { font-family: 'eurostileregular', Arial, Helvetica, sans-serif; font-size: 24px; font-weight: normal; line-height: 1.2; padding-bottom: 5px; text-shadow: #9d0000 2px 2px 1px; }
 
-
-
-
-
-
-
 .banner-inner { background: #000; }
 
 .banner-inner .wrapper { height: 120px; position: relative; }
 
 .banner-inner .text { color: #fff; font-family: 'eurostileregular', Arial, Helvetica, sans-serif; font-size: 24px; font-weight: normal; margin: 0; position: absolute; left: 20px; bottom: 30px; text-shadow: #271e1e 2px 2px 1px; }
-
-
-
-.intro-home { background: url(../img/bg-line-1.gif) repeat-y 250px top; }
-
+*/
 .intro-home .image { float: left; margin-right: 20px; padding: 10px 20px 0; width: 210px; }
 
 .intro-home .content { float: left; width: 670px; }
@@ -262,37 +313,29 @@ address { font-style: normal; }
 
 .intro-home .content strong { color: #d70000; }
 
-
-
 .box-group { margin: 0 auto; padding: 20px 0 60px; width: 972px; }
 
 .box-1 { float: left; width: 243px; }
 
-.box-1 .box-wrapper { background: url(../img/bg-box-top.png) no-repeat left top; line-height: 1; padding-top: 15px; }
+.box-1 .box-wrapper {line-height: 1; padding-top: 15px; }
 
-.box-1 .box-wrapper-inner { background: url(../img/bg-box-loop.png) repeat-y left top; }
-
-.box-1 .box-content {  background: url(../img/bg-box-bottom.png) no-repeat left bottom; padding: 0 13px 23px; }
+.box-1 .box-content {padding: 0 13px 23px; }
 
 .box-1 .image { border: #d7d7d7 solid 1px; margin-bottom: 12px; }
 
-.box-1 a { background: url(../img/ico-arrow.png) no-repeat right 2px; color: #f00; display: block; font-family: 'helvetica', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0 5px; text-transform: uppercase; }
+.box-1 a { color: #f00; display: block; font-family: 'helvetica', Arial, Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0 5px; text-transform: uppercase; }
 
 .box-1 a:hover { color: #c00; }
 
 #my_div p { margin: 0 10px; text-align: center; }
 
-
-
 .breadcrumb { color: #999; font-size: 11px; }
 
 .title-page { font-family: 'helvetica', Arial, Helvetica, sans-serif; color: #d70000; font-size: 18px; font-weight: normal; margin: 0; text-transform: capitalize; }
 
+.tempt-1 { margin: 0 auto; padding: 20px 40px 80px; width: 920px; }
 
-
-.tempt-1 { background: url(../img/bg-main.png) repeat-y left top; margin: 0 auto; padding: 20px 40px 80px; width: 920px; }
-
-.contact-us { background: url(../img/bg-main-2.png) repeat-y 430px top; margin: 0 auto; padding: 20px 20px 80px; width: 920px; }
+.contact-us { margin: 0 auto; padding: 20px 20px 80px; width: 920px; }
 
 .contact-us  .main-content { float: left; width: 375px; }
 
@@ -344,7 +387,7 @@ aside .intro h4 { color: #d70000; font-size: 14px; font-weight: bold; text-trans
 
 .document ul { list-style: none; padding-left: 0; }
 
-.document ul li { background: url(../img/ico-list.gif) no-repeat left 6px; padding: 0 10px 3px; }
+.document ul li { padding: 0 10px 3px; }
 
 
 
@@ -423,9 +466,6 @@ aside .intro h4 { color: #d70000; font-size: 14px; font-weight: bold; text-trans
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 
 .clearfix:after { clear: both; }
-
-.clearfix { *zoom: 1; }
-
 
 
 /* Print styles */
