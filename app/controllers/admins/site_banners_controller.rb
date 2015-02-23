@@ -35,7 +35,7 @@ class Admins::SiteBannersController < Admins::BaseController
 
   def destroy
     @site_banner.destroy
-    respond_with(@site_banner)
+    redirect_to "/admins/site_banners",notice: "删除成功！"
   end
 
   private

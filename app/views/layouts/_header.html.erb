@@ -1,22 +1,22 @@
 <div class="header-container">
 	<header class="wrapper clearfix">
-  	<div class="logo"><a href="/"></a></div>
+	<a href="/"><%=image_tag("logo.png",width:"350px;margin: 12px 0 10px 20px;")%></a>
   	<nav>
   		<ul id="menu" class="dropdown dropdown-upward">
   			<li id="menu-item-44" class="first menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-44">
   				<a href="/">HOME</a>
   			</li>
 				<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45">
-					<%=link_to("ABOUT US",home_about_path)%>
+					<%=link_to("ABOUT US","/about_us.html")%>
 				</li>
 				<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49">
-					<%=link_to "PRODUCT", products_path%>
+					<%=link_to "PRODUCT", "/products.html"%>
 				</li>
 				<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48">
-					<%=link_to("SERVICE",home_service_path)%>
+					<%=link_to("SERVICE","/service.html")%>
 				</li>
 				<li id="menu-item-47" class="last menu-item menu-item-type-post_type menu-item-object-page menu-item-47">
-				<%=link_to("CONTACT",home_contact_path)%>
+				<%=link_to("CONTACT","/contact.html")%>
 				</li>
 			</ul>
 		</nav>

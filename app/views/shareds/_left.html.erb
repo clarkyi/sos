@@ -1,10 +1,17 @@
 <div class="col-md-3">
   <nav class="nav-bar">
     <dl> 
-      <dt class="left-nav-header">PRODUCT LIST</dt>
+      <dt class="left-nav-header">PRODUCT</dt>
       <% @products_menu.each do |prod|%>
         <dd><%=link_to(prod.name,product_path(prod.id))%></dd> 
       <%end%>
+    </dl> 
+  </nav>
+
+  <nav class="nav-bar">
+    <dl> 
+      <dt class="left-nav-header">Contact Us</dt>
+      <%=raw @contact.content.html_safe%>
     </dl> 
   </nav>
 </div>

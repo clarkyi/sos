@@ -1,9 +1,10 @@
 <%=content_for :title do %>
-  <title>PRODUCT List</title>
+  <title>PRODUCT LIST</title>
 <%end%>
 <%=render "shareds/left"%>
 <div class="product-list clearfix">
   <%@products.each do |product|%>
+    <a href="/products/<%=product.id%>">
     <div class="product-main">
 	    <div class="thumbnail">
 	        <%=image_tag(product.cover_url)%>
@@ -14,5 +15,13 @@
         </div>
       </div>
     </div>
+    </a>
   <%end%>
+  <div class="pagination">
+    <%if @products.present?%>
+      <div align="center">
+        <%= paginate @products, :window => 3 %> 
+       </div>
+    <%end%>
+  </div>
 </div>
