@@ -4,18 +4,21 @@
 <%=render "shareds/left"%>
 <div class="product-list clearfix">
   <%@products.each do |product|%>
-    <a href="/products/<%=product.id%>">
-    <div class="product-main">
-	    <div class="thumbnail">
-	        <%=image_tag(product.cover_url)%>
-	    </div>
+    <div class="product-main product-list-one">
+      <div class="thumbnail">
+        <a href="/products/<%=product.id%>" class="img-box">
+          <%=image_tag(product.cover_url)%>
+        </a>
+      </div>
       <div class="caption">
         <div class="text">
           <p><%=product.description%></p>
+        <p>
+          <a href="/products/<%=product.id%>">MORE&nbsp;&gt;&gt;</a>
+        </p>
         </div>
       </div>
     </div>
-    </a>
   <%end%>
   <div class="pagination">
     <%if @products.present?%>

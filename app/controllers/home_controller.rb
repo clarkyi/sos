@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
 	def index
 	   main_products
+     about_us
 	   product_list
 	end
 end

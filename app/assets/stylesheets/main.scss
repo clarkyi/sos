@@ -37,14 +37,13 @@ div.content{
 	clear:both;
 	zoom:1;
 }
-.product-main {
+.product-main{
 	margin-top: 20px;
-    margin-left: 27px;
+  margin-left: 27px;
 	float: left;
 	.thumbnail{
 		padding:0;
 		float: left;
-		/*width:310px;*/
 		display: inline-block;
 		height: 178px;
 		img{width: 275px; height: 180px;}
@@ -66,18 +65,27 @@ div.content{
 			p{padding: 5px;}
 
 		}
-		.about{
-			width: 626px;
-			padding: 5px;
-			display: inline-block;
-			a {color: blue;}
-		}
 	}
+}
+.product-single .caption{
+  .text{
+    width: 620px;
+    height: 135px;
+    overflow: hidden;
+    p{padding: 0;margin: 0;}
+  }
+  a.more {color: blue;}
+  .about{
+    width: 626px;
+    padding: 0 5px 5px 0;
+    display: inline-block;
+    a {color: blue;}
+  }
 }
 
 .product-recommend{
 	/*margin-left: -27px;*/
-	a{color:#333;}
+	a{color:#333;font-weight: bold;}
 	/*float: left;*/
 	.item{
 		display: inline-block;
@@ -88,7 +96,10 @@ div.content{
 		min-height: 1px;
 		padding-right: 18px;
 		padding-left: 18px;
-		
+	 p{
+    height: 83px;
+    overflow: hidden;
+   }
 	}
 }
 .thumbnail {
@@ -117,7 +128,7 @@ div.content{
 		padding-right: 20px;
 		overflow: visible;
 		position: relative;
-    	a{color: blue;}
+    	a{font-weight: bold;}
     	dd{padding: 6px 0}
 	}
 }
@@ -142,7 +153,19 @@ div.content{
     line-height: 30px;
   }  
 }
-
+.product-list-one{
+  height: 181px;
+  .thumbnail img{
+    width: 240px;
+  }
+  .text{
+    height: 140px;
+    p{overflow: hidden;max-height: 120px;}
+    a{color:blue;}
+  }
+  a.img-box{border: 5px solid #fff; width: 250px;height: 190px;display: block;}
+  a.img-box:hover{border: 5px solid #3399CC;}
+}
 
 .product-list{
 	width: 766px;
@@ -171,6 +194,7 @@ div.content{
   	text-align: center;
   	font-weight: bold; 
   }
+  
 }
 .image{
   margin-left: 183px;
@@ -281,7 +305,7 @@ span.current{border: 0}
 
 #menu a:hover, #menu li.active a { color: #d70000; }
 
-#menu li { border-right: #c2c2c2 solid 1px; float: left; font-family: 'helvetica', "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed; font-size: 15px; font-weight: normal; line-height: 1; padding: 0 10px; text-transform: uppercase; }
+#menu li { border-right: #c2c2c2 solid 1px; float: left; font-family: 'helvetica', "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed; font-size: 15px; font-weight: bold; line-height: 1; padding: 0 10px; text-transform: uppercase; }
 
 #menu li.last { border-right: none; padding-right: 0; }
 

@@ -29,7 +29,9 @@ gem 'bootstrap_kaminari'
 gem 'kaminari'
 gem "settingslogic", "2.0.8"
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'capistrano', '~> 3.3.0'
+
 gem 'mongoid','~> 4.0'
 gem "bson_ext"
 

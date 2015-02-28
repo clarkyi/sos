@@ -9,6 +9,6 @@ module Concerns::ProductConcerns
   end
 
   def product_left_list
-
+  	
   end  
 end

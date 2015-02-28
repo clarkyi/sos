@@ -4,7 +4,7 @@
 
 <div class="product">
   <%@main_products.each do |product|%>
-    <div class="product-main">
+    <div class="product-main product-single">
       <div class="thumbnail">
         <%=image_tag(product.cover_url)%>
       </div>
@@ -13,10 +13,9 @@
             <a href="/about_us.html">ABOUT US</a>
           </div>
           <div class="text">
-            <p>
-              <%=product.description%>
-            </p>
+            <%=raw @about.content.html_safe%>
           </div>
+          <a href="/about_us.html" class="more">READ MORE&nbsp;&gt;&gt;</a>
         </div>
     </div>
   <%end%>
