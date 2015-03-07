@@ -5,7 +5,7 @@ set :application, 'sos'
 set :repo_url, 'https://coding.net/clarkyi/sos.git'
 
 # Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+ask :branch, ask("deploy git branch: ","master")
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/sos'
@@ -15,7 +15,8 @@ set :deploy_to, '/var/www/sos'
 
 # Default value for :format is :pretty
 # set :format, :pretty
-
+after 'deploy:publishing', 'deploy:restart'
+after 'deploy:restart', 'deploy:cleanup'
 # Default value for :log_level is :debug
 # set :log_level, :debug
 
@@ -37,12 +38,25 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 namespace :deploy do
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+    invoke 'unicorn:restart'
+    on roles(:app), in: :sequence, wait: 5 do                
+    end
+  end
+  task :start do
+    on roles(:app) do 
+      puts "server startup...."
+      invoke "unicorn:start"
     end
   end
 
+  task :stop do
+    on roles(:app) do 
+      puts "server start stop...."
+      invoke "unicorn:stop"
+    end
+  end
+
+  after :finishing, 'deploy:cleanup'
+  before :finishing, 'deploy:restart'
+  after 'deploy:rollback', 'deploy:restart'
 end

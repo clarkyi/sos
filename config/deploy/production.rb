@@ -3,10 +3,10 @@
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
-
-role :app, 118.193.197.139
-role :web, 118.193.197.139
-role :db,  118.193.197.139
+set :ip, "118.193.197.139"
+role :app, fetch(:ip)
+role :web, fetch(:ip)
+role :db,  fetch(:ip)
 
 
 # Extended Server Syntax
@@ -15,8 +15,9 @@ role :db,  118.193.197.139
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'hex', roles: %w{web app}, my_property: :my_value
-
+set :user, 'hex'
+set :unicorn_rack_env, "production"
+set :unicorn_roles, :web
 
 # Custom SSH Options
 # ==================
