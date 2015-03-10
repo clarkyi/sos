@@ -3,7 +3,7 @@ working_directory "#{app_path}/current"
 pid               "#{app_path}/current/tmp/pids/unicorn.pid"
 
 # listen
-listen 3008
+listen 3000
 
 # logging
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"

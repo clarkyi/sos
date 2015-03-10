@@ -1,8 +1,9 @@
+require 'capistrano3/unicorn'
 # config valid only for current version of Capistrano
 lock '3.2.1'
 
 set :application, 'sos'
-set :repo_url, 'https://coding.net/clarkyi/sos.git'
+set :repo_url, 'https://github.com/clarkyi/sos.git'
 
 # Default branch is :master
 set :branch, ask("deploy git branch: ","master")
