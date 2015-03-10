@@ -30,7 +30,10 @@ gem 'kaminari'
 gem "settingslogic", "2.0.8"
 # Use Unicorn as the app server
 gem 'unicorn'
-gem 'capistrano', '~> 3.3.0'
+gem 'unicorn-rails'
+gem 'capistrano3-unicorn'
+
+gem 'capistrano', '~> 3.2.1'
 
 gem 'mongoid','~> 4.0'
 gem "bson_ext"
@@ -38,7 +41,9 @@ gem "bson_ext"
 # #fulltext
 # gem 'baidu_ueditor_rails'
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
+gem 'rvm1-capistrano3', require: false
+gem 'capistrano-bundler', '>= 1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

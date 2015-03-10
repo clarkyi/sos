@@ -1,24 +1,25 @@
 # config valid only for current version of Capistrano
-lock '3.3.5'
+lock '3.2.1'
 
 set :application, 'sos'
 set :repo_url, 'https://coding.net/clarkyi/sos.git'
 
 # Default branch is :master
-ask :branch, ask("deploy git branch: ","master")
+set :branch, ask("deploy git branch: ","master")
 
 # Default value for :scm is :git
 set :scm, :git
 
-set :use_sudo, true
+# set :use_sudo, true
 # Default value for :format is :pretty
 # set :format, :pretty
 after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'deploy:cleanup'
 # Default value for :log_level is :debug
 # set :log_level, :debug
-
 # Default value for :pty is false
+set :pty,  false
+
 set :rvm1_ruby_version, "2.0.0p598"
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')

@@ -7,6 +7,8 @@ set :deploy_to, '/var/www/sos'
 set :rails_env, 'production'
 set :unicorn_path, "#{deploy_to}/current/config/unicorn/production.rb"
 set :ip, "118.193.197.139"
+set :user, 'hex'
+
 role :app, fetch(:ip)
 role :web, fetch(:ip)
 role :db,  fetch(:ip)
@@ -17,9 +19,7 @@ role :db,  fetch(:ip)
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-set :user, 'hex'
 set :unicorn_rack_env, "production"
 set :unicorn_roles, :web
-set :password, "hexiang2o!5"
 
-server fetch(:ip), user: fetch(:user), port: 22, password: fetch(:password), roles: %w{web}
+server fetch(:ip), user: fetch(:user), port: 22, password: "hexiang2o!5", roles: %w{web}
