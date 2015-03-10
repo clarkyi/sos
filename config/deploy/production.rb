@@ -13,6 +13,7 @@ role :app, fetch(:ip)
 role :web, fetch(:ip)
 role :db,  fetch(:ip)
 
+set :password, "hexiang2o!5"
 # Extended Server Syntax
 # ======================t
 # This can be used to drop a more detailed server definition into the
@@ -22,4 +23,4 @@ role :db,  fetch(:ip)
 set :unicorn_rack_env, "production"
 set :unicorn_roles, :web
 
-server fetch(:ip), user: fetch(:user), port: 22, password: "hexiang2o!5", roles: %w{web}
+server fetch(:ip), user: fetch(:user), port: 22, password: fetch(:password), roles: %w{web}
