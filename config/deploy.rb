@@ -21,7 +21,7 @@ after 'deploy:restart', 'deploy:cleanup'
 # Default value for :pty is false
 set :pty,  false
 
-set :rvm1_ruby_version, "2.0.0p598"
+set :rvm1_ruby_version, "ruby-2.0.0-p598"
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
