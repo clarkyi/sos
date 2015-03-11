@@ -4,7 +4,7 @@ lock '3.2.1'
 
 set :application, 'sos'
 set :repo_url, 'https://github.com/clarkyi/sos.git'
-
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # Default branch is :master
 set :branch, ask("deploy git branch: ","master")
 
