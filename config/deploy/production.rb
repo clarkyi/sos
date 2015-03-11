@@ -8,7 +8,7 @@ set :rails_env, 'production'
 set :unicorn_path, "#{deploy_to}/current/config/unicorn/production.rb"
 set :ip, "118.193.197.139"
 set :user, 'hex'
-
+set :unicorn_pid, "#{deploy_to}/current/tmp/pids/unicorn.pid"
 role :app, fetch(:ip)
 role :web, fetch(:ip)
 role :db,  fetch(:ip)
