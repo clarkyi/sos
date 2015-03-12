@@ -3,7 +3,8 @@ working_directory "#{app_path}/current"
 pid               "#{app_path}/current/tmp/pids/unicorn.pid"
 
 # listen
-listen 3000
+listen 3000, :tcp_nopush => false
+listen "/tmp/unicorn.sos.sock", backlog: 1024
 
 # logging
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
