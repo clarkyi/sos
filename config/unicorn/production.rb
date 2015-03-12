@@ -1,6 +1,6 @@
 app_path = "/var/www/sos"
 working_directory "#{app_path}/current"
-pid               "#{app_path}/current/tmp/pids/unicorn.pid"
+pid               "#{app_path}/shared/tmp/pids/unicorn.pid"
 
 # listen
 listen 3000, :tcp_nopush => false
