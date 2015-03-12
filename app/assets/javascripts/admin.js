@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./sb_admin_js/plugins/metisMenu
+//= require_tree ./sb_admin_js
+//= require_tree ./admins

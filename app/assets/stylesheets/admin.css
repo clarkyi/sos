@@ -12,5 +12,6 @@
  * file per style scope.
  *
  *= require_tree ./sb_admin_css
+ *= require_tree ./admins
  *= require_self
  */
