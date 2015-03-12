@@ -42,6 +42,7 @@ gem "bson_ext"
 # gem 'baidu_ueditor_rails'
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
+gem 'turbo-sprockets-rails3', group: :assets
 gem 'rvm1-capistrano3', require: false
 gem 'capistrano-bundler', '>= 1.1'
 
