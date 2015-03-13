@@ -123,7 +123,7 @@ class Admins::SiteController < Admins::BaseController
     def obj_create klass
       @obj = klass.new(set_params)
       if @obj.save
-        redirect_to "/admins/site/#{klass.underscore}_new", notice:"添加成功！"
+        redirect_to "/admins/site/#{klass.name.underscore}_new", notice:"添加成功！"
       else
         render "#{klass.name.underscore}_new".to_sym
       end
