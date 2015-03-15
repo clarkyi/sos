@@ -3,7 +3,7 @@
     <dl> 
       <dt class="left-nav-header">PRODUCT</dt>
       <% @products_menu.each do |prod|%>
-        <dd><%=link_to(prod.name,product_path(prod.id))%></dd> 
+        <dd id="left-list-products"><%=link_to(prod.name,product_path(prod.id))%></dd> 
       <%end%>
     </dl> 
   </nav>
