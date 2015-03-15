@@ -23,7 +23,7 @@
     <%@list_products.each_with_index do |product,index|%>
       <div class="item <%='left-item' if index==0%>">
         <div class="thumbnail">
-          <a href="/products" target="_blank">
+          <a href="/products" class="recommend-a-box" target="_blank">
             <img data-src="<%=product.cover_url%>/100%x200" alt="100%x200" src="<%=product.cover_url%>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
           </a>
           <div class="caption">

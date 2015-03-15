@@ -184,8 +184,14 @@ div.content{
   a.img-box:hover{border: 5px solid #3399CC;}
 }
 
-.info{
-	
+.recommend-a-box{
+  display: block;
+  width: 279px;
+  border: #fff 5px solid;
+}
+.recommend-a-box:hover{
+  display: block;
+  border: #3399CC 5px solid;
 }
 
 .product-list{
