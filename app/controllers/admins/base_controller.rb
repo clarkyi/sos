@@ -1,5 +1,6 @@
 #encoding: utf-8
 class Admins::BaseController < ApplicationController
+
 	layout "admin"
 	before_action :authenticate_admin!,:set_active
 

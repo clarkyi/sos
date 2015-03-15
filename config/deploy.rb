@@ -47,6 +47,9 @@ namespace :deploy do
       invoke "unicorn:start"
     end
   end
+  task :reload, :roles => :app do
+    run "kill -USR2 `cat #{app_path}/shared/tmp/pids/unicorn.pid`"
+  end
 
   task :stop do
     on roles(:app) do 

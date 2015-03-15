@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Admins::SiteController < Admins::BaseController
 
   before_filter :find_obj, only: [:address_update,:about_us_update,:service_update,:contact_update]
@@ -77,8 +78,17 @@ class Admins::SiteController < Admins::BaseController
       if params[:action].include?('address')
         params.require(:address).permit(:content)
       else
+        params[:content] = delete_p_tag_margin(params[:content])
         params.permit(:content)
       end
+    end
+
+    def delete_p_tag_margin content
+      clear_style content
+    end
+
+    def clear_style str
+       str.gsub(/(margin-top:|margin-botton:|margin-left:|margin-right:|margin:) \d{1,}px;/,"")
     end
 
     def find_obj
