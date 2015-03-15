@@ -100,8 +100,10 @@ div.content{
 		padding-right: 18px;
 		padding-left: 18px;
 	 p{
-    height: 83px;
-    overflow: hidden;
+      height: 83px;
+      width: 274px;
+      display: inline-block;
+      overflow: hidden;
    }
 	}
 }
@@ -131,7 +133,8 @@ div.content{
 		padding-right: 20px;
 		overflow: visible;
 		position: relative;
-    	a{font-weight: bold;}
+    	a{color: #333;}
+      a:hover{text-decoration: none;}
     	dd{padding: 6px 0}
 	}
 }
@@ -155,6 +158,11 @@ div.content{
     height: 30px;
     font-weight: bold;
     line-height: 30px;
+    dd a{
+      font-weight: normal;
+      color: #333;
+      text-align: center;
+    }
   }  
 }
 .product-list-one{
