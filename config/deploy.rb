@@ -14,6 +14,8 @@ set :log_level, :trace
 # set :use_sudo, true
 # Default value for :format is :pretty
 # set :format, :pretty
+after 'deploy:symlink:shared', 'share:init_path'
+after 'deploy:publishing', 'share:link_files'
 after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'deploy:cleanup'
 # Default value for :log_level is :debug

@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./sb_admin_js
+
+// $(document).on("page:fetch", startSpinner);
